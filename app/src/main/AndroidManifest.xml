@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.activity.property" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SingleTaskActivity"
+            android:label="@string/title_activity_single_task"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.single_task_activity">
+        </activity>
+        <activity
+            android:name=".SingleInstanceActivity"
+            android:label="@string/title_activity_single_instance"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.single_instance_activity">
+        </activity>
+        <activity
+            android:name=".SingleTopActivity"
+            android:label="@string/title_activity_single_top"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.single_top_activity">
+        </activity>
+        <activity
+            android:name=".StandardActivity"
+            android:label="@string/title_activity_stander"
+            android:launchMode="standard"
+            android:taskAffinity="com.standard_activity">
+        </activity>
+    </application>
+
+</manifest>

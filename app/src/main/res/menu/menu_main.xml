@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_standard"
+        android:orderInCategory="100"
+        android:title="launch standard"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_single_top"
+        android:orderInCategory="100"
+        android:title="launch top"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_single_task"
+        android:orderInCategory="100"
+        android:title="launch task"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_single_instance"
+        android:orderInCategory="100"
+        android:title="launch instance"
+        app:showAsAction="never" />
+</menu>
