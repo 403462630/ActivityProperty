@@ -22,4 +22,44 @@
         android:orderInCategory="100"
         android:title="launch instance"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_new_task"
+        android:orderInCategory="100"
+        android:title="flag new task"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_clear_top"
+        android:orderInCategory="100"
+        android:title="flag clear top"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_single_top"
+        android:orderInCategory="100"
+        android:title="flag single top"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_brought_to_front"
+        android:orderInCategory="100"
+        android:title="flag brought to front"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_reorder_to_front"
+        android:orderInCategory="100"
+        android:title="flag reorder to front"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_no_history"
+        android:orderInCategory="100"
+        android:title="flag no history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_clear_when_task_reset"
+        android:orderInCategory="100"
+        android:title="flag clear when task reset"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_flag_reset_task_if_needed"
+        android:orderInCategory="100"
+        android:title="flag reset task if needed"
+        app:showAsAction="never" />
 </menu>
