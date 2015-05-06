@@ -25,7 +25,7 @@ activity放入哪个task的个人经验总结：
         允许：在检查此activity是否需要new task
             需要：则根据activity的taskAffinity属性，查找是否存在该task，没有则重新新建一个task，并将activity放入其中
             不需要：则直接将activity实例放入此task中
-        不允许：根据activity的taskAffinity属性，重新新建一个task，并将activity放入其中
+        不允许：根据activity的taskAffinity属性，查找是否存在该task，重新新建一个task，并将activity放入其中
 
 Intent flag:
 
