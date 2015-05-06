@@ -19,11 +19,11 @@ taskAffinity:
 疑问：假如有四个activity，分别是A(standard, taskAffinityA)、B(singleTop, taskAffinityB)、C(singleTask, taskAffinityC)、D(singleInstance, taskAffinityD)，括号里是设置的启动模式和对应的taskAffinity，如果A-B-C-D启动，有几个task？
 如果是C-D-A-B启动，又有多少个task？如果D-C-A-B呢？如果D-A-D-B-D-C-A呢？
 
-个人经验总结：
+activity放入哪个task的个人经验总结：
 
-    此task是否允许放其他activity实例
+    当前task是否允许放其他activity实例
         允许：在检查此activity是否需要new task
-            需要：则根据activity的taskAffinity属性，重新新建一个task，并将activity放入其中
+            需要：则根据activity的taskAffinity属性，查找是否存在该task，没有则重新新建一个task，并将activity放入其中
             不需要：则直接将activity实例放入此task中
         不允许：根据activity的taskAffinity属性，重新新建一个task，并将activity放入其中
 
