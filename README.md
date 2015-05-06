@@ -63,7 +63,7 @@ Activity 常用属性：
 
 > clearTaskOnLaunch(默认false)：用来标记是否从Task中清除所有的Activity，除了根Activity外（每当从主画面重新启动时）——“true”，表示总是清除其它的 Activity，“false”表示不。默认值是“false”。这个特性只对启动一个新的Task的Activity（根Activity）有意义； 对Task中其它的Activity忽略。
 
->- 例如：启动ActivityA（clearTaskOnLaunch=true）、ActivityB、ActivityC，当按home键退回到主界面重新启动应用时，ActivityB、ActivityC会被销毁，会显示ActivityA的页面
+>- 例如：启动ActivityA（clearTaskOnLaunch=true）、ActivityB、ActivityC，假设这三个Activity在同一个task中，当按home键退回到主界面重新启动应用时，ActivityB、ActivityC会被销毁，会显示ActivityA的页面
 
 > finishOnTaskLaunch(默认false)：这个属性和android:allowReparenting属性相似，不同之处在于allowReparenting属性是重新宿主到taskaffinity的task中，而finishOnTaskLaunch属性是销毁实例。如果这个属性和android:allowReparenting都设定为“true”，则这个属性好些。
 
