@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.activity.property" >
+
     <uses-permission android:name="android.permission.GET_TASKS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,25 +22,55 @@
             android:name=".SingleTaskActivity"
             android:label="@string/title_activity_single_task"
             android:launchMode="singleTask"
-            android:taskAffinity="com.single_task_activity">
+            android:taskAffinity="com.single_task_activity" >
         </activity>
         <activity
             android:name=".SingleInstanceActivity"
             android:label="@string/title_activity_single_instance"
             android:launchMode="singleInstance"
-            android:taskAffinity="com.single_instance_activity">
+            android:taskAffinity="com.single_instance_activity" >
         </activity>
         <activity
             android:name=".SingleTopActivity"
             android:label="@string/title_activity_single_top"
             android:launchMode="singleTop"
-            android:taskAffinity="com.single_top_activity">
+            android:taskAffinity="com.single_top_activity" >
         </activity>
         <activity
             android:name=".StandardActivity"
             android:label="@string/title_activity_stander"
             android:launchMode="standard"
-            android:taskAffinity="com.standard_activity">
+            android:taskAffinity="com.standard_activity" >
+        </activity>
+        <activity
+            android:name=".AllowTaskReparentingActivity"
+            android:allowTaskReparenting="true"
+            android:label="@string/title_activity_allow_task_reparenting" >
+            <intent-filter>
+                <action android:name="com.action.allow.task.reparenting.activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ExportedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_exported" >
+            <intent-filter>
+                <action android:name="com.action.exported_1.activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FinishOnTaskLaunchActivity"
+            android:label="@string/title_activity_finish_on_task_launch"
+            android:finishOnTaskLaunch="true">
+            <intent-filter>
+                <action android:name="com.action.finish.on.task.launch.activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

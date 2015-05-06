@@ -8,5 +8,8 @@
     <string name="title_activity_single_instance">SingleInstanceActivity</string>
     <string name="title_activity_single_top">SingleTopActivity</string>
     <string name="title_activity_stander">StanderActivity</string>
+    <string name="title_activity_allow_task_reparenting">AllowTaskReparentingActivity</string>
+    <string name="title_activity_exported">ExportedActivity</string>
+    <string name="title_activity_finish_on_task_launch">FinishOnTaskLaunchActivity</string>
 
 </resources>

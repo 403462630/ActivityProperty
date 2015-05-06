@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ActivityProperty.iml" filepath="$PROJECT_DIR$/ActivityProperty.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherapp/otherapp.iml" filepath="$PROJECT_DIR$/otherapp/otherapp.iml" />
     </modules>
   </component>
 </project>

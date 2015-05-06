@@ -26,6 +26,19 @@ public class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stander);
+        Log.d(getTag(), "--onCreate");
+    }
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        Log.d(getTag(), "--onRetainCustomNonConfigurationInstance");
+        return super.onRetainCustomNonConfigurationInstance();
+    }
+
+    @Override
+    public Object getLastCustomNonConfigurationInstance() {
+        Log.d(getTag(), "--getLastCustomNonConfigurationInstance");
+        return super.getLastCustomNonConfigurationInstance();
     }
 
     @Override
@@ -42,6 +55,24 @@ public class BaseActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
         Log.d(getTag(), "--onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(getTag(), "--onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(getTag(), "--onDestroy");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(getTag(), "--onStop");
     }
 
     @Override
