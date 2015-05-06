@@ -59,7 +59,7 @@ Activity 常用属性：
 
 >- 例如：appA的ActivityA 点击一个按钮启动appB的activityB，这时activityB在appA的taskA中，然后按home键退到桌面，（然后点击appB icon启动appB，这是activityB实例会从taskA移到taskB中，并放入栈顶）或者（点击appA icon启动appA时，也会将activityB移动到activityB taskAffinity指定的taskB中去（如果没有，则新建taskB），然后显示taskA中的activityA）
 
-> alwaysRetainTaskState(默认false)：用来标记Activity所在的Task的状态是否总是由系统来保持——“true”，表示总是；“false”，表示在某种情形下允许系统恢复Task 到它的初始化状态。默认值是“false”。这个特性只针对Task的根Activity有意义；对其它Activity来说，忽略之。
+> alwaysRetainTaskState(默认false)：用来标记Activity所在的Task的状态是否总是由系统来保持——“true”，表示总是；“false”，表示在某种情形下允许系统恢复Task 到它的初始化状态。默认值是“false”。这个特性只针对Task的根Activity有意义；对其它Activity来说，忽略之。（暂时不是很清楚这到低是什么意思？希望高手帮忙解答）
 
 > clearTaskOnLaunch(默认false)：用来标记是否从Task中清除所有的Activity，除了根Activity外（每当从主画面重新启动时）——“true”，表示总是清除其它的 Activity，“false”表示不。默认值是“false”。这个特性只对启动一个新的Task的Activity（根Activity）有意义； 对Task中其它的Activity忽略。
 
