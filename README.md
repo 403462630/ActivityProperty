@@ -30,7 +30,7 @@ activity放入哪个task的个人经验总结：
 
 Intent flag:
 
-> FLAG_ACTIVITY_NEW_TASK:当使用这个标记的时候，如果没有taskAffinity指定的task运行此activity，则会新建一个task，并新建此activity实例放入此task中；如果已经有一个task在运行你要启动的activity,这是将不会启动新的activity,而是把这个拥有你要启动activity的task切换到前台，保持它最后操作是的状态
+> FLAG_ACTIVITY_NEW_TASK:当使用这个标记的时候，如果没有taskAffinity指定的task运行此activity，则会新建一个task，并新建此activity实例放入此task中；如果已经有一个task在运行你要启动的activity,这是将不会启动新的activity,而是把这个拥有你要启动activity的task切换到前台，保持它最后操作是的状态（只对standard和singleTop有用）
 
 > FLAG_ACTIVITY_CLEAR_TOP:这个FLAG就相当于加载模式中的SingleTask（如果Activity的启动模式是默认的standard，则会先finish掉此activity，然后重新实例化一个新的activity）
 
