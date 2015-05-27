@@ -5,7 +5,7 @@ lauchMode：
 
 > singleTop：每次激活Activity时(startActivity)，如果任务栈栈顶就是该Activity，则不需要创建，其余情况都要创建Activity实例；
 
-> singleTask：如果要激活的那个Activity在任务栈中存在该实例，则不需要创建，只需要把此Activity放入栈顶，并把该Activity以上的Activity实例都pop；（如果该activity位于栈低，并且在MainActivity指定的task中，当按home键或其它操作进入桌面界面，并点击icon打开本应用时，会导致此task中除此activity实例外，其它的activity实例都出栈，并会执行此activity的onNewIntent方法(不知道原因，希望高手帮忙解答)）
+> singleTask：如果要激活的那个Activity在任务栈中存在该实例，则不需要创建，只需要把此Activity放入栈顶，并把该Activity以上的Activity实例都pop；（如果该activity位于栈低（会导致task的realActivity是singleTask模式），并且在MainActivity指定的task中，当按home键或其它操作进入桌面界面，并点击icon打开本应用时，会导致此task中除此activity实例外，其它的activity实例都出栈，并会执行此activity的onNewIntent方法）
 
 > singleInstance：这个跟singleTask基本上是一样，只有一个区别：在这个模式下的Activity实例所处的task中，只能有这个activity实例，不能有其他的实例
 
@@ -15,6 +15,7 @@ taskAffinity:
 > activity: 每个activity都有taskAffinity属性，它是指activity希望进入的task（每个task也有taskAffinity），如果没有明确指明，则是application标签指明的taskAffinity，如果application也没有指明，则是应用包名
 
 > task: task也有taskAffinity属性，它的值等于它的根Activity的taskAffinity的值(注意：taskAffinity不是task的唯一标示，即singleInstance模式的task可以和其它lauchMode的task的taskAffinity的值相等)
+    如果MainActivity指定的task的realActivity是singleTask模式，当按home键或其它操作进入桌面界面，并点击icon打开本应用时，会导致此task中除此activity实例外，其它的activity实例都出栈，并会执行此activity的onNewIntent方法，如果此activity不存在，这重新new一个此activity实例
 
 疑问：假如有四个activity，分别是A(standard, taskAffinityA)、B(singleTop, taskAffinityB)、C(singleTask, taskAffinityC)、D(singleInstance, taskAffinityD)，括号里是设置的启动模式和对应的taskAffinity，如果A-B-C-D启动，有几个task？
 如果是C-D-A-B启动，又有多少个task？如果D-C-A-B呢？如果D-A-D-B-D-C-A呢？
