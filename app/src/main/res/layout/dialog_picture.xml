@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:layout_marginLeft="50dp"
+        android:id="@+id/pb_image_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cc000000">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="关闭"/>
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="保存"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--<uk.co.senab.photoview.PhotoView-->
+                <!--android:id="@+id/iv_picture"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:src="@drawable/default_image"/>-->
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/iv_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_picture"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerInParent="true"/>-->
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
