@@ -24,6 +24,8 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
@@ -223,11 +225,38 @@ public class BaseActivity extends ActionBarActivity {
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-            GifImageLoad.with(getContext())
+//            GifImageLoad.with(getContext())
+//                    .load("https://s-media-cache-ak0.pinimg.com/originals/a9/eb/be/a9ebbe858e0d7906ca149061e89ab1fb.jpg")
+//                    .placeholder(getResources().getDrawable(R.mipmap.ic_launcher))
+//                    .error(getResources().getDrawable(R.mipmap.anim_flag_england))
+//                    .into(holder.imageView);
+
+            Ion.with(getContext())
                     .load("https://s-media-cache-ak0.pinimg.com/originals/a9/eb/be/a9ebbe858e0d7906ca149061e89ab1fb.jpg")
+                    .withBitmap()
                     .placeholder(getResources().getDrawable(R.mipmap.ic_launcher))
                     .error(getResources().getDrawable(R.mipmap.anim_flag_england))
-                    .into(holder.imageView);
+                    .intoImageView(holder.imageView);
+
+            final Holder finalHolder = holder;
+            Ion.with(getContext())
+                    .load("https://s-media-cache-ak0.pinimg.com/originals/a9/eb/be/a9ebbe858e0d7906ca149061e89ab1fb.jpg")
+                    .asByteArray()
+                    .setCallback(new FutureCallback<byte[]>() {
+                        @Override
+                        public void onCompleted(Exception e, byte[] result) {
+                            try {
+                                if (e == null) {
+                                    finalHolder.imageView.setImageDrawable(new GifDrawable(result));
+                                } else {
+                                    finalHolder.imageView.setImageDrawable(getResources().getDrawable(R.mipmap.anim_flag_england));
+                                }
+                            } catch (IOException e1) {
+                                e1.printStackTrace();
+                                finalHolder.imageView.setImageDrawable(getResources().getDrawable(R.mipmap.anim_flag_england));
+                            }
+                        }
+                    });
 //            try {
 //                GifImageLoad.with(getContext())
 //                        .load(new GifDrawable(getResources(), R.raw.anim_flag_hungary))
@@ -272,14 +301,14 @@ public class BaseActivity extends ActionBarActivity {
             public TextView baseView;
             public TextView topView;
             public TextView numberView;
-            public GifImageView imageView;
+            public ImageView imageView;
 
             public Holder(View view) {
                 idView = (TextView) view.findViewById(R.id.id);
                 baseView = (TextView) view.findViewById(R.id.base_activity);
                 topView = (TextView) view.findViewById(R.id.top_activity);
                 numberView = (TextView) view.findViewById(R.id.number);
-                imageView = (GifImageView) view.findViewById(R.id.image);
+                imageView = (ImageView) view.findViewById(R.id.image);
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

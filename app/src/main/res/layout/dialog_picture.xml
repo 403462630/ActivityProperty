@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto">
-    <ProgressBar
-        android:layout_marginLeft="50dp"
-        android:id="@+id/pb_image_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -55,12 +49,25 @@
                 android:id="@+id/iv_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
                 />
             <!--<ImageView-->
                 <!--android:id="@+id/iv_picture"-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent"-->
-                <!--android:layout_centerInParent="true"/>-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:scaleType="fitCenter"/>-->
         </RelativeLayout>
     </LinearLayout>
+    <ProgressBar
+        android:layout_marginLeft="50dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/pb_image_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="false"
+
+        />
 </RelativeLayout>
